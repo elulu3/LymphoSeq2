@@ -23,7 +23,7 @@
 #' @seealso Refer to the LymphoSeqDB package for details regarding the 
 #' publishedTRB database.
 #' @export
-#' @import tidyverse httr jsonlite LymphoSeqDB
+#' @import tidyverse httr jsonlite
 searchDB <- function(study_table, credential) {
     study_table <- study_table %>% 
                    filter(!is.na(aminoAcid)) %>%
@@ -53,7 +53,7 @@ searchDB <- function(study_table, credential) {
 #' @seealso Refer to the LymphoSeqDB package for details regarding the 
 #' publishedTRB database.
 #' @export
-#' @import tidyverse httr jsonlite LymphoSeqDB
+#' @import tidyverse httr jsonlite 
 searchIreceptor <- function(...) {
     sequence_row <- tibble(...)
     path <- "https://ipa1.ireceptor.org/v2/sequences_summary?"

@@ -47,6 +47,7 @@ biocViews: Software,
            Alignment, 
            MultipleSequenceAlignment, 
            msa, 
+           LymphoSeqDB,
            phyloseq
 NeedsCompilation: no
 Encoding: UTF-8

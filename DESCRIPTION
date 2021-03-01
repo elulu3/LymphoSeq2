@@ -31,7 +31,8 @@ Imports: Biostrings,
          VennDiagram, 
          pheatmap,
          wordcloud,
-         reshape
+         reshape,
+         phyloseq
 Remotes: adw96/breakaway
 License: Artistic-2.0
 LazyData: true

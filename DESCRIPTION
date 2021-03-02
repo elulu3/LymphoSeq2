@@ -30,9 +30,7 @@ Imports: Biostrings,
          UpSetR,
          utils,
          VennDiagram, 
-         pheatmap,
-         wordcloud,
-         reshape
+         pheatmap
 Remotes: shashidhar22/breakaway
 License: Artistic-2.0
 LazyData: true
@@ -40,7 +38,13 @@ RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    httr,
+    jsonlite,
+    plyr,
+    vegan,
+    reshape,
+    wordcloud
 VignetteBuilder: knitr
 biocViews: Software, 
            Technology, 

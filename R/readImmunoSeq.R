@@ -104,12 +104,14 @@ getStandard <- function(clone_file, progress, threads) {
     airr_fields <- vroom::vroom(airr_headers_path, 
             trim_ws = TRUE, 
             show_col_types = FALSE) 
-    matching_fields <- getAIRRFields(clone_file, threads)
+    get_match_fields <- getAIRRFields(clone_file, threads)
+    type <- get_match_fields[[1]]
+    matching_fields <- get_match_fields[[2]]
     col_read <- names(matching_fields)
     clone_data <- vroom::vroom(clone_file, 
             na = c("", "NA", "Nan", "NaN", "unresolved"), 
             show_col_types = FALSE, progress = FALSE, num_threads = threads,
-            .name_repair = ~stringr::str_replace_all(., matching_fields))
+            .name_repair = ~stringr::str_replace_all(., matching_fields), delim = "\t")
     existing_match <- airr_fields %>% 
         colnames() %>% 
         intersect(colnames(clone_data))
@@ -118,17 +120,23 @@ getStandard <- function(clone_file, progress, threads) {
     } 
     existing_airr_data <- clone_data %>%
         dplyr::select(existing_match)
-    clone_data <-  dplyr::bind_rows(airr_fields, existing_airr_data) %>% 
+    clone_data <- dplyr::bind_rows(airr_fields, existing_airr_data) %>% 
         dplyr::slice(-1)
     file_name <- tools::file_path_sans_ext(basename(clone_file))
+    # if (type == "immunoSEQ") {
+    #     clone_data <- clone_data %>% 
+    #         dplyr::mutate(cdr1_start = dplyr::if_else(is.na(cdr1_start), cdr1_start, cdr1_start - 3),
+    #             cdr2_start = dplyr::if_else(is.na(cdr2_start), cdr2_start, cdr2_start - 3),
+    #             cdr3_start = dplyr::if_else(is.na(cdr3_start), cdr3_start, cdr3_start - 3),
+    #             junction_aa_length = (stringr::str_length(junction) / 3))
+    # } else if (type == "immunoSEQLegacy") {
+    #     clone_data <- clone_data %>%
+    #         dplyr::mutate(junction = dplyr::if_else(is.na(junction) & !is.na(sequence), sequence, junction),
+    #             junction_aa = dplyr::if_else(is.na(junction_aa) & !is.na(sequence_aa), sequence_aa, junction_aa))
+    # }
     clone_data <- clone_data %>%
         dplyr::mutate(repertoire_id = file_name,
             d2_call = dplyr::if_else(!is.na(d2_call), stringr::str_split(d2_call, ",")[[1]][2], d2_call),
-            cdr3 = stringr::str_sub(junction, 4L, -4L),
-            cdr3_aa = stringr::str_sub(junction_aa, 2L, -2L),
-            cdr1_end = dplyr::if_else(is.na(cdr1_end), cdr1_end, cdr1_end + cdr1_start),
-            cdr2_end = dplyr::if_else(is.na(cdr2_end), cdr2_end, cdr2_end + cdr2_start),
-            cdr3_end = dplyr::if_else(is.na(cdr3_end), cdr3_end, cdr3_end + cdr3_start),
             sequence_id = dplyr::row_number(),
             junction = dplyr::if_else(is.na(junction) & !is.na(sequence), sequence, junction),
             junction_aa = dplyr::if_else(is.na(junction_aa) & !is.na(sequence_aa), sequence_aa, junction_aa),
@@ -136,6 +144,11 @@ getStandard <- function(clone_file, progress, threads) {
             junction_aa = dplyr::if_else(stringr::str_detect(junction_aa, "[a-z]+"), toupper(stringr::str_extract(junction_aa, "[a-z]{2,}")), junction_aa),
             junction_length = stringr::str_length(junction),
             junction_aa_length = stringr::str_length(junction_aa),
+            cdr3 = stringr::str_sub(junction, 4L, -4L),
+            cdr3_aa = stringr::str_sub(junction_aa, 2L, -2L),
+            cdr1_end = dplyr::if_else(is.na(cdr1_end), cdr1_end, cdr1_end + cdr1_start),
+            cdr2_end = dplyr::if_else(is.na(cdr2_end), cdr2_end, cdr2_end + cdr2_start),
+            cdr3_end = dplyr::if_else(is.na(cdr3_end), cdr3_end, cdr3_end + cdr3_start),
             rev_comp = FALSE,
             stop_codon = dplyr::if_else(stringr::str_detect(sequence, "\\*") | stringr::str_detect(sequence_aa, "\\*") | 
                                     is.na(sequence) | is.na(sequence_aa), TRUE, FALSE),
@@ -180,7 +193,7 @@ getStandard <- function(clone_file, progress, threads) {
 #' @rdname readImmunoSeq
 getAIRRFields <- function(clone_file, threads) {
     clone_table <- vroom::vroom(clone_file, show_col_types = FALSE, 
-        n_max = 1, num_threads = threads)
+        n_max = 1, num_threads = threads, delim = "\t")
     col_names <- base::colnames(clone_table)
     input_type <- getFileType(col_names)
     if (input_type == "immunoSEQ") {
@@ -254,7 +267,7 @@ getAIRRFields <- function(clone_file, threads) {
         matching_fields <- col_names
         names(matching_fields) <- col_names
     }
-    return(matching_fields)
+    return(list(input_type, matching_fields))
 }
 
 

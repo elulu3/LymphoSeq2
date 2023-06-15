@@ -72,7 +72,7 @@ Ravishankar</h4>
                         <h4 data-toc-skip class="author">David
 Coffey</h4>
             
-            <h4 data-toc-skip class="date">2023-04-25</h4>
+            <h4 data-toc-skip class="date">2023-06-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/shashidhar22/LymphoSeq2/blob/HEAD/vignettes/LymphoSeq2.Rmd" class="external-link"><code>vignettes/LymphoSeq2.Rmd</code></a></small>
       <div class="d-none name"><code>LymphoSeq2.Rmd</code></div>
@@ -119,7 +119,18 @@ Coffey</h4>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">yday()</span>    masks <span style="color: #0000BB;">data.table</span>::yday()</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">lubridate</span>::<span style="color: #00BB00;">year()</span>    masks <span style="color: #0000BB;">data.table</span>::year()</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Use the conflicted package (<span style="color: #0000BB; font-style: italic;">&lt;http://conflicted.r-lib.org/&gt;</span>) to force all conflicts to become errors</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vroom.r-lib.org" class="external-link">vroom</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vroom.r-lib.org" class="external-link">vroom</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'vroom'</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:readr':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     as.col_spec, col_character, col_date, col_datetime, col_double,</span></span>
+<span><span class="co">#&gt;     col_factor, col_guess, col_integer, col_logical, col_number,</span></span>
+<span><span class="co">#&gt;     col_skip, col_time, cols, cols_condense, cols_only, date_names,</span></span>
+<span><span class="co">#&gt;     date_names_lang, date_names_langs, default_locale, fwf_cols,</span></span>
+<span><span class="co">#&gt;     fwf_empty, fwf_positions, fwf_widths, locale, output_column,</span></span>
+<span><span class="co">#&gt;     problems, spec</span></span></code></pre></div>
 <p>Adaptive Immune Receptor Repertoire Sequencing (AIRR-seq) provides a
 unique opportunity to interrogate the adaptive immune repertoire under
 various clinical conditions. The utility offered by this technology has
@@ -982,7 +993,7 @@ additional R packages as shown below.</p>
 <span><span class="fu">wordcloud2</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/wordcloud2/man/wordcloud2.html" class="external-link">wordcloud2</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">vtable</span>, </span>
 <span>                     color <span class="op">=</span> <span class="va">RedBlue</span><span class="op">)</span></span></code></pre></div>
 <div class="wordcloud2 html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8d32cfd9db97395c4a5f" style="width:700px;height:432.632880098888px;"></div>
-<script type="application/json" data-for="htmlwidget-8d32cfd9db97395c4a5f">{"x":{"word":[null,"TRBV10","TRBV11","TRBV12","TRBV18","TRBV19","TRBV2","TRBV24","TRBV27","TRBV28","TRBV29","TRBV4","TRBV5","TRBV6","TRBV7","TRBV9"],"freq":[0.0156101275461641,0.0266711304541904,0.00370231788731562,0.0017723862226511,0.004844522341913,0.0218856876530324,0.0324477966613495,0.00380078378857402,0.323965943926951,0.0230541496812987,0.0141003170602021,0.343324340114352,0.0414344512495323,0.0731470358481525,0.0654601311565805,0.00477887840774073],"fontFamily":"Segoe UI","fontWeight":"bold","color":["#053061","#063263","#073466","#083669","#09386C","#0A3A6F","#0B3C72","#0C3E75","#0D4078","#0E437B","#0F457E","#114781","#124984","#134B87","#144D8A","#154F8D","#165190","#175493","#185695","#195898","#1A5A9B","#1C5C9E","#1D5EA1","#1E60A4","#1F62A7","#2064AA","#2166AC","#2368AD","#246AAE","#256CAF","#276DB0","#286FB0","#2971B1","#2A73B2","#2C75B3","#2D76B4","#2F78B5","#307AB6","#317CB7","#337DB8","#347FB9","#3581B9","#3783BA","#3884BB","#3986BC","#3A88BD","#3C8ABE","#3D8BBF","#3F8DC0","#408FC1","#4191C2","#4393C3","#4694C4","#4996C5","#4C98C6","#4F9AC7","#529CC8","#559EC9","#58A0CA","#5BA2CB","#5EA4CC","#61A6CD","#65A8CE","#68AACF","#6BACD0","#6EAED1","#71B0D2","#74B2D3","#77B4D4","#7AB6D6","#7DB8D7","#80BAD8","#84BCD9","#87BEDA","#8AC0DB","#8DC2DC","#90C4DD","#93C5DE","#95C6DF","#98C8DF","#9AC9E0","#9DCAE1","#9FCBE1","#A2CDE2","#A4CEE3","#A6CFE3","#A9D0E4","#ABD2E5","#AED3E6","#B0D4E6","#B3D5E7","#B5D7E8","#B8D8E8","#BAD9E9","#BDDAEA","#BFDCEB","#C2DDEB","#C4DEEC","#C7DFED","#C9E1ED","#CCE2EE","#CEE3EF","#D1E5F0","#D2E5F0","#D3E6F0","#D5E7F0","#D6E7F1","#D8E8F1","#D9E9F1","#DBE9F1","#DCEAF2","#DEEBF2","#DFECF2","#E1ECF3","#E2EDF3","#E4EEF3","#E5EEF3","#E7EFF4","#E8F0F4","#EAF1F4","#EBF1F4","#EDF2F5","#EEF3F5","#F0F3F5","#F1F4F6","#F3F5F6","#F4F5F6","#F6F6F6","#F7F6F6","#F7F5F4","#F7F4F2","#F7F3F0","#F8F2EE","#F8F0EC","#F8EFEA","#F8EEE8","#F9EDE7","#F9ECE5","#F9EBE3","#F9EAE1","#F9E9DF","#FAE8DD","#FAE7DB","#FAE5D9","#FAE4D7","#FBE3D6","#FBE2D4","#FBE1D2","#FBE0D0","#FCDFCE","#FCDECC","#FCDDCA","#FCDCC8","#FDDBC7","#FCD8C4","#FCD6C1","#FBD4BE","#FBD2BC","#FBD0B9","#FACEB6","#FACCB4","#FACAB1","#F9C7AE","#F9C5AB","#F9C3A9","#F8C1A6","#F8BFA3","#F8BDA1","#F7BB9E","#F7B99B","#F7B799","#F6B496","#F6B293","#F5B090","#F5AE8E","#F5AC8B","#F4AA88","#F4A886","#F4A683","#F3A380","#F2A07E","#F19E7C","#EF9B7A","#EE9878","#ED9676","#EC9374","#EB9072","#EA8E70","#E88B6E","#E7886C","#E6856A","#E58368","#E48065","#E27D63","#E17B61","#E0785F","#DF755D","#DE725B","#DD7059","#DB6D57","#DA6A55","#D96853","#D86551","#D7624F","#D6604D","#D45D4B","#D35A4A","#D15749","#D05447","#CE5146","#CD4F45","#CC4C43","#CA4942","#C94641","#C7433F","#C6403E","#C53E3D","#C33B3B","#C2383A","#C03539","#BF3237","#BE3036","#BC2D35","#BB2A33","#B92732","#B82431","#B6212F","#B51F2E","#B41C2D","#B2192B","#B0172A","#AD162A","#AA1529","#A71429","#A41328","#A11228","#9E1127","#9B1027","#991027","#960F26","#930E26","#900D25","#8D0C25","#8A0B24","#870A24","#840923","#810823","#7E0722","#7B0622","#780521","#750421","#720320","#6F0220","#6C011F","#69001F","#67001F"],"minSize":0,"weightFactor":524.285577713619,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script><div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<script type="application/json" data-for="htmlwidget-8d32cfd9db97395c4a5f">{"x":{"word":[null,"TRBV10","TRBV11","TRBV12","TRBV18","TRBV19","TRBV2","TRBV24","TRBV27","TRBV28","TRBV29","TRBV4","TRBV5","TRBV6","TRBV7","TRBV9"],"freq":[0.0156101275461641,0.02667113045419038,0.003702317887315623,0.001772386222651096,0.004844522341912996,0.02188568765303242,0.03244779666134951,0.003800783788574017,0.3239659439269514,0.0230541496812987,0.01410031706020205,0.3433243401143518,0.04143445124953229,0.07314703584815245,0.06546013115658048,0.004778878407740733],"fontFamily":"Segoe UI","fontWeight":"bold","color":["#053061","#063263","#073466","#083669","#09386C","#0A3A6F","#0B3C72","#0C3E75","#0D4078","#0E437B","#0F457E","#114781","#124984","#134B87","#144D8A","#154F8D","#165190","#175493","#185695","#195898","#1A5A9B","#1C5C9E","#1D5EA1","#1E60A4","#1F62A7","#2064AA","#2166AC","#2368AD","#246AAE","#256CAF","#276DB0","#286FB0","#2971B1","#2A73B2","#2C75B3","#2D76B4","#2F78B5","#307AB6","#317CB7","#337DB8","#347FB9","#3581B9","#3783BA","#3884BB","#3986BC","#3A88BD","#3C8ABE","#3D8BBF","#3F8DC0","#408FC1","#4191C2","#4393C3","#4694C4","#4996C5","#4C98C6","#4F9AC7","#529CC8","#559EC9","#58A0CA","#5BA2CB","#5EA4CC","#61A6CD","#65A8CE","#68AACF","#6BACD0","#6EAED1","#71B0D2","#74B2D3","#77B4D4","#7AB6D6","#7DB8D7","#80BAD8","#84BCD9","#87BEDA","#8AC0DB","#8DC2DC","#90C4DD","#93C5DE","#95C6DF","#98C8DF","#9AC9E0","#9DCAE1","#9FCBE1","#A2CDE2","#A4CEE3","#A6CFE3","#A9D0E4","#ABD2E5","#AED3E6","#B0D4E6","#B3D5E7","#B5D7E8","#B8D8E8","#BAD9E9","#BDDAEA","#BFDCEB","#C2DDEB","#C4DEEC","#C7DFED","#C9E1ED","#CCE2EE","#CEE3EF","#D1E5F0","#D2E5F0","#D3E6F0","#D5E7F0","#D6E7F1","#D8E8F1","#D9E9F1","#DBE9F1","#DCEAF2","#DEEBF2","#DFECF2","#E1ECF3","#E2EDF3","#E4EEF3","#E5EEF3","#E7EFF4","#E8F0F4","#EAF1F4","#EBF1F4","#EDF2F5","#EEF3F5","#F0F3F5","#F1F4F6","#F3F5F6","#F4F5F6","#F6F6F6","#F7F6F6","#F7F5F4","#F7F4F2","#F7F3F0","#F8F2EE","#F8F0EC","#F8EFEA","#F8EEE8","#F9EDE7","#F9ECE5","#F9EBE3","#F9EAE1","#F9E9DF","#FAE8DD","#FAE7DB","#FAE5D9","#FAE4D7","#FBE3D6","#FBE2D4","#FBE1D2","#FBE0D0","#FCDFCE","#FCDECC","#FCDDCA","#FCDCC8","#FDDBC7","#FCD8C4","#FCD6C1","#FBD4BE","#FBD2BC","#FBD0B9","#FACEB6","#FACCB4","#FACAB1","#F9C7AE","#F9C5AB","#F9C3A9","#F8C1A6","#F8BFA3","#F8BDA1","#F7BB9E","#F7B99B","#F7B799","#F6B496","#F6B293","#F5B090","#F5AE8E","#F5AC8B","#F4AA88","#F4A886","#F4A683","#F3A380","#F2A07E","#F19E7C","#EF9B7A","#EE9878","#ED9676","#EC9374","#EB9072","#EA8E70","#E88B6E","#E7886C","#E6856A","#E58368","#E48065","#E27D63","#E17B61","#E0785F","#DF755D","#DE725B","#DD7059","#DB6D57","#DA6A55","#D96853","#D86551","#D7624F","#D6604D","#D45D4B","#D35A4A","#D15749","#D05447","#CE5146","#CD4F45","#CC4C43","#CA4942","#C94641","#C7433F","#C6403E","#C53E3D","#C33B3B","#C2383A","#C03539","#BF3237","#BE3036","#BC2D35","#BB2A33","#B92732","#B82431","#B6212F","#B51F2E","#B41C2D","#B2192B","#B0172A","#AD162A","#AA1529","#A71429","#A41328","#A11228","#9E1127","#9B1027","#991027","#960F26","#930E26","#900D25","#8D0C25","#8A0B24","#870A24","#840923","#810823","#7E0722","#7B0622","#780521","#750421","#720320","#6F0220","#6C011F","#69001F","#67001F"],"minSize":0,"weightFactor":524.2855777136192,"backgroundColor":"white","gridSize":0,"minRotation":-0.7853981633974483,"maxRotation":0.7853981633974483,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script><div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vGenes</span> <span class="op">&lt;-</span> <span class="fu">LymphoSeq2</span><span class="fu">::</span><span class="fu"><a href="../reference/geneFreq.html">geneFreq</a></span><span class="op">(</span><span class="va">nuc_table</span>, locus <span class="op">=</span> <span class="st">"V"</span>, family <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>           <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span>id_cols <span class="op">=</span> <span class="va">gene_name</span>, </span>
 <span>                              names_from <span class="op">=</span> <span class="va">repertoire_id</span>, </span>
@@ -1075,50 +1086,50 @@ then extrapolating the curve to an ideal depth.</p>
 <span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt;  [1] vroom_1.6.1        lubridate_1.9.2    forcats_1.0.0      stringr_1.5.0     </span></span>
+<span><span class="co">#&gt;  [1] vroom_1.6.3        lubridate_1.9.2    forcats_1.0.0      stringr_1.5.0     </span></span>
 <span><span class="co">#&gt;  [5] dplyr_1.1.2        purrr_1.0.1        readr_2.1.4        tidyr_1.3.0       </span></span>
 <span><span class="co">#&gt;  [9] tibble_3.2.1       ggplot2_3.4.2      tidyverse_2.0.0    wordcloud2_0.2.1  </span></span>
 <span><span class="co">#&gt; [13] RColorBrewer_1.1-3 LymphoSeq2_1.0.0   data.table_1.14.8 </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
 <span><span class="co">#&gt;   [1] bitops_1.0-7            gridExtra_2.3           formatR_1.14           </span></span>
-<span><span class="co">#&gt;   [4] phangorn_2.11.1         rlang_1.1.0             magrittr_2.0.3         </span></span>
+<span><span class="co">#&gt;   [4] phangorn_2.11.1         rlang_1.1.1             magrittr_2.0.3         </span></span>
 <span><span class="co">#&gt;   [7] compiler_4.3.0          reshape2_1.4.4          ggalluvial_0.12.5      </span></span>
 <span><span class="co">#&gt;  [10] systemfonts_1.0.4       vctrs_0.6.2             maps_3.4.1             </span></span>
 <span><span class="co">#&gt;  [13] quadprog_1.5-8          shape_1.4.6             pkgconfig_2.0.3        </span></span>
 <span><span class="co">#&gt;  [16] crayon_1.5.2            fastmap_1.1.1           ellipsis_0.3.2         </span></span>
-<span><span class="co">#&gt;  [19] XVector_0.39.0          labeling_0.4.2          utf8_1.2.3             </span></span>
-<span><span class="co">#&gt;  [22] rmarkdown_2.21          tzdb_0.3.0              seqmagick_0.1.5        </span></span>
+<span><span class="co">#&gt;  [19] XVector_0.40.0          labeling_0.4.2          utf8_1.2.3             </span></span>
+<span><span class="co">#&gt;  [22] rmarkdown_2.22          tzdb_0.4.0              seqmagick_0.1.5        </span></span>
 <span><span class="co">#&gt;  [25] UpSetR_1.4.0            ragg_1.2.5              bit_4.0.5              </span></span>
-<span><span class="co">#&gt;  [28] xfun_0.39               zlibbioc_1.45.0         cachem_1.0.7           </span></span>
-<span><span class="co">#&gt;  [31] aplot_0.1.10            ash_1.0-15              GenomeInfoDb_1.35.17   </span></span>
-<span><span class="co">#&gt;  [34] jsonlite_1.8.4          progress_1.2.2          highr_0.10             </span></span>
+<span><span class="co">#&gt;  [28] xfun_0.39               zlibbioc_1.46.0         cachem_1.0.8           </span></span>
+<span><span class="co">#&gt;  [31] aplot_0.1.10            ash_1.0-15              GenomeInfoDb_1.36.0    </span></span>
+<span><span class="co">#&gt;  [34] jsonlite_1.8.5          progress_1.2.2          highr_0.10             </span></span>
 <span><span class="co">#&gt;  [37] tweenr_2.0.2            parallel_4.3.0          prettyunits_1.1.1      </span></span>
-<span><span class="co">#&gt;  [40] R6_2.5.1                bslib_0.4.2             ggmsa_1.3.4            </span></span>
+<span><span class="co">#&gt;  [40] R6_2.5.1                bslib_0.5.0             ggmsa_1.3.4            </span></span>
 <span><span class="co">#&gt;  [43] stringi_1.7.12          extrafontdb_1.0         jquerylib_0.1.4        </span></span>
-<span><span class="co">#&gt;  [46] Rcpp_1.0.10             knitr_1.42              iNEXT_3.0.0            </span></span>
-<span><span class="co">#&gt;  [49] VennDiagram_1.7.3       extrafont_0.19          IRanges_2.33.1         </span></span>
-<span><span class="co">#&gt;  [52] Matrix_1.5-4            igraph_1.4.2            timechange_0.2.0       </span></span>
+<span><span class="co">#&gt;  [46] Rcpp_1.0.10             knitr_1.43              iNEXT_3.0.0            </span></span>
+<span><span class="co">#&gt;  [49] VennDiagram_1.7.3       extrafont_0.19          IRanges_2.34.0         </span></span>
+<span><span class="co">#&gt;  [52] Matrix_1.5-4            igraph_1.4.3            timechange_0.2.0       </span></span>
 <span><span class="co">#&gt;  [55] tidyselect_1.2.0        stringdist_0.9.10       yaml_2.3.7             </span></span>
 <span><span class="co">#&gt;  [58] codetools_0.2-19        plyr_1.8.8              lattice_0.21-8         </span></span>
-<span><span class="co">#&gt;  [61] treeio_1.23.1           withr_2.5.0             evaluate_0.20          </span></span>
+<span><span class="co">#&gt;  [61] treeio_1.25.0.001       withr_2.5.0             evaluate_0.21          </span></span>
 <span><span class="co">#&gt;  [64] lambda.r_1.2.4          gridGraphics_0.5-1      desc_1.4.2             </span></span>
 <span><span class="co">#&gt;  [67] futile.logger_1.4.3     polyclip_1.10-4         circlize_0.4.15        </span></span>
-<span><span class="co">#&gt;  [70] Biostrings_2.67.2       pillar_1.9.0            ggtree_3.7.2           </span></span>
+<span><span class="co">#&gt;  [70] Biostrings_2.68.1       pillar_1.9.0            ggtree_3.9.0           </span></span>
 <span><span class="co">#&gt;  [73] KernSmooth_2.23-20      stats4_4.3.0            ggfun_0.0.9            </span></span>
 <span><span class="co">#&gt;  [76] generics_0.1.3          rprojroot_2.0.3         dtplyr_1.3.1           </span></span>
-<span><span class="co">#&gt;  [79] RCurl_1.98-1.12         S4Vectors_0.37.7        hms_1.1.3              </span></span>
+<span><span class="co">#&gt;  [79] RCurl_1.98-1.12         S4Vectors_0.38.1        hms_1.1.3              </span></span>
 <span><span class="co">#&gt;  [82] munsell_0.5.0           scales_1.2.1            tidytree_0.4.2         </span></span>
 <span><span class="co">#&gt;  [85] glue_1.6.2              pheatmap_1.0.12         lazyeval_0.2.2         </span></span>
-<span><span class="co">#&gt;  [88] tools_4.3.0             fs_1.6.1                fastmatch_1.1-3        </span></span>
+<span><span class="co">#&gt;  [88] tools_4.3.0             fs_1.6.2                fastmatch_1.1-3        </span></span>
 <span><span class="co">#&gt;  [91] grid_4.3.0              ape_5.7-1               Rttf2pt1_1.3.12        </span></span>
-<span><span class="co">#&gt;  [94] R4RNA_1.27.0            colorspace_2.1-0        nlme_3.1-162           </span></span>
+<span><span class="co">#&gt;  [94] R4RNA_1.28.0            colorspace_2.1-0        nlme_3.1-162           </span></span>
 <span><span class="co">#&gt;  [97] GenomeInfoDbData_1.2.10 patchwork_1.1.2         ggalt_0.4.0            </span></span>
-<span><span class="co">#&gt; [100] ggforce_0.4.1           cli_3.6.1               msa_1.31.7             </span></span>
+<span><span class="co">#&gt; [100] ggforce_0.4.1           cli_3.6.1               msa_1.32.0             </span></span>
 <span><span class="co">#&gt; [103] textshaping_0.3.6       futile.options_1.0.1    ineq_0.2-13            </span></span>
 <span><span class="co">#&gt; [106] proj4_1.0-12            fansi_1.0.4             gtable_0.3.3           </span></span>
-<span><span class="co">#&gt; [109] yulab.utils_0.0.6       sass_0.4.5              digest_0.6.31          </span></span>
-<span><span class="co">#&gt; [112] BiocGenerics_0.45.3     ggplotify_0.1.0         htmlwidgets_1.6.2      </span></span>
+<span><span class="co">#&gt; [109] yulab.utils_0.0.6       sass_0.4.6              digest_0.6.31          </span></span>
+<span><span class="co">#&gt; [112] BiocGenerics_0.46.0     ggplotify_0.1.0         htmlwidgets_1.6.2      </span></span>
 <span><span class="co">#&gt; [115] farver_2.1.1            memoise_2.0.1           htmltools_0.5.5        </span></span>
 <span><span class="co">#&gt; [118] pkgdown_2.0.7           lifecycle_1.0.3         GlobalOptions_0.1.2    </span></span>
 <span><span class="co">#&gt; [121] bit64_4.0.5             MASS_7.3-58.4</span></span></code></pre></div>
